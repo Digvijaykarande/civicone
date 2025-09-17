@@ -6,8 +6,9 @@ import ReportingPage from './components/ReportingPage'
 import WelcomePage from './components/WelcomePage'
 import LoginPage from './components/LoginPage'
 import RegistrationPage from './components/RegistrationPage'
-RegistrationPage
-
+import Home from './components/Home'
+import NoticationPage from './components/NoticationPage'
+import FeedPage from './components/FeedPage'
 function App() {
 
   return (
@@ -19,6 +20,9 @@ function App() {
         <Route path="/report" element={<ReportingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegistrationPage />} /> 
+        <Route path="/home" element={<Home />} />
+        <Route path="/feed" element={<FeedPage />} />
+        <Route path="/notifications" element={<NoticationPage />} />
       </Routes>
 
     </Router>

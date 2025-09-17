@@ -1,0 +1,111 @@
+.feed-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.feed-header {
+  display: flex;
+    gap: 5px;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.feed-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.feed-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 14px;
+  transition: all 0.3s ease;
+}
+
+.feed-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3b82f6;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.date {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Location */
+.location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Issue Image */
+.issue-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.description {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .feed-container {
+    padding: 10px;
+  }
+  .feed-card {
+    padding: 12px;
+  }
+  .user-info h2 {
+    font-size: 15px;
+  }
+  .description {
+    font-size: 13px;
+  }
+}

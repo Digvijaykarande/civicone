@@ -1,29 +1,41 @@
 .analytics {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .analytics h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  color: #111827;
 }
 
 .analytics-items {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
 .analytics-card {
   flex: 1;
   text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: #f9f9f9;
+  padding: 12px 8px;
+  border-radius: 12px;
+  background: #f9fafb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.analytics-card:hover {
+  transform: translateY(-2px);
 }
 
 .analytics-icon {
-  width: 40px;
-  height: 40px;
+  color: #2563eb;
   margin-bottom: 6px;
+}
+
+.analytics p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
 }

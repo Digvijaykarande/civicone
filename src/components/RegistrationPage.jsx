@@ -31,12 +31,7 @@ const RegistrationPage = () => {
         className="input-field"
       />
 
-      {/* Confirm Password */}
-      <input
-        type="password"
-        placeholder="Confirm Password"
-        className="input-field"
-      />
+      
 
       {/* Register Button */}
       <button className="register-btn">Sign Up</button>

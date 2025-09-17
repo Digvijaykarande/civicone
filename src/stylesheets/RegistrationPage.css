@@ -35,10 +35,10 @@
 
 /* Input Field */
 .input-field {
-  width: 100%;
+  width: 96%;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid #909090;
   font-size: 14px;
   margin-bottom: 16px;
 }
@@ -124,7 +124,7 @@
   }
 
   .register-title {
-    font-size: 18px;
+    font-size: 1.5rem;
   }
 
   .register-btn {

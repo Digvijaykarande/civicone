@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheets/IssuesList.css";
+import { ChevronRight } from "lucide-react";
 
 const issues = [
   { label: "Pothole", type: "high" },
@@ -13,10 +14,10 @@ const IssuesList = () => {
       {issues.map((issue, idx) => (
         <div className="issue-item" key={idx}>
           <span className={`tag ${issue.type}`}>
-            {issue.type === "high" ? "High" : issue.type === "low" ? "List" : ""}
+            {issue.type === "high" ? "High" : "Low"}
           </span>
           <p>{issue.label}</p>
-          <span className="arrow">›</span>
+          <ChevronRight className="arrow" size={18} />
         </div>
       ))}
     </div>

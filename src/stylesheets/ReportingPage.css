@@ -1,94 +1,140 @@
 /* Container */
 .report-container {
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
   padding: 16px;
   background: #fff;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
 }
 
 /* Header */
 .header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #333;
+  color: #111;
 }
 
 .back-btn {
   border: none;
-  background: none;
-  font-size: 20px;
+  background: transparent;
   cursor: pointer;
-  color: #555;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+.back-btn:hover {
+  color: #2563eb;
 }
 
 /* Upload box */
 .upload-box {
   width: 100%;
-  height: 245px;
-  background: #f3f4f6;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  height: 220px;
+  background: #f9fafb;
+  border: 2px dashed #d1d5db;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
-  cursor: pointer;
+  margin-bottom: 14px;
+  transition: 0.3s ease;
+}
+.upload-box:hover {
+  background: #f3f4f6;
 }
 
 .upload-content {
-  display: flex;
-    text-align: center;
-    color: #666;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  text-align: center;
+  color: #555;
 }
-
-.camera-icon {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 6px;
+.upload-content p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* Textarea */
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 12px;
-  margin-bottom: 12px;
-  font-size: 18px;
+  margin-bottom: 14px;
+  font-size: 16px;
   resize: none;
-  min-height: 70px;
+  min-height: 80px;
+  transition: border 0.2s ease;
+}
+textarea:focus {
+  border-color: #4f8ef7;
+  outline: none;
 }
 
 /* Option buttons */
 .option-btn {
   width: 100%;
-  padding: 15px;
+  padding: 14px 16px;
   margin-bottom: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: #fff;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  align-items: center;
+  font-size: 15px;
   color: #333;
   cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.option-btn:hover {
+  background: #f9fafb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .option-btn .arrow {
-  color: #aaa;
+  color: #9ca3af;
+}
+.category-list {
+  margin-top: 10px;
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.category-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.category-option:hover {
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.category-option.active {
+  background: #dbeafe;
+  font-weight: 600;
+  color: #1d4ed8;
 }
 
 /* Submit button */
@@ -99,39 +145,38 @@ textarea {
   border-radius: 12px;
   background: #4f8ef7;
   color: white;
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 6px;
-  transition: 0.3s;
+  margin-top: 8px;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
-
 .submit-btn:hover {
   background: #3976d6;
+}
+.submit-btn:active {
+  transform: scale(0.98);
 }
 
 /* Report submitted box */
 .submitted-box {
   margin-top: 18px;
-  padding: 12px;
-  background: #eef5ff;
-  border: 1px solid #c9e0ff;
+  padding: 14px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
   border-radius: 12px;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 14px;
-  color: #333;
+  color: #1e3a8a;
 }
-
 .submitted-box .checkmark {
-  color: #4f8ef7;
-  font-size: 18px;
+  color: #16a34a;
 }
-
 .tracking {
-  font-size: 12px;
-  color: #666;
+  font-size: 13px;
+  color: #374151;
 }
 
 /* Mobile responsiveness */
@@ -139,13 +184,10 @@ textarea {
   .report-container {
     padding: 12px;
   }
-
   .header h1 {
-    font-size:1.4rem;
+    font-size: 1rem;
   }
-
   .submit-btn {
-    font-size:20px;
-   
+    font-size: 17px;
   }
 }

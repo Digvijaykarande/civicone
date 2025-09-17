@@ -36,10 +36,10 @@
 
 /* Input Field */
 .input-field {
-  width: 100%;
+  width: 95%;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid #909090;
   font-size: 14px;
   margin-bottom: 16px;
 }

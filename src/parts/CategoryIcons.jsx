@@ -1,21 +1,27 @@
 import React from "react";
 import "../stylesheets/CategoryIcons.css";
+import { Route, Trash2, Droplet, Lightbulb, Bell, Camera, House } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const categories = [
-  { label: "Roads", icon: "https://img.icons8.com/?size=100&id=rJSINIXLwINM&format=png&color=000000" },
-  { label: "Waste", icon: "https://img.icons8.com/?size=100&id=41711&format=png&color=000000" },
-  { label: "Water", icon: "https://img.icons8.com/?size=50&id=26264&format=png&color=000000" },
-  { label: "Streetlights", icon: "https://img.icons8.com/?size=100&id=55001&format=png&color=000000" },
+  { label: "Capture", icon: <Camera size={28} />, path: "/report" },
+  { label: "Report Issue", icon: <Trash2 size={28} />, path: "/home" },
+  { label: "Notifications", icon: <Bell size={28} />, path: "/notifications" },
+  { label: "Peoples Issue", icon: <House size={28} />, path: "/feed" },
+  { label: "Roads", icon: <Route size={28} />, path: "/roads" },
+  { label: "Waste", icon: <Trash2 size={28} />, path: "/waste" },
+  { label: "Water", icon: <Droplet size={28} />, path: "/water" },
+  { label: "Streetlights", icon: <Lightbulb size={28} />, path: "/streetlights" },
 ];
 
 const CategoryIcons = () => {
   return (
     <div className="categories">
       {categories.map((cat, idx) => (
-        <div className="category" key={idx}>
-          <img src={cat.icon} alt={cat.label} className="category-icon" />
+        <Link to={cat.path} className="category" key={idx}>
+          <div className="icon-wrapper">{cat.icon}</div>
           <p>{cat.label}</p>
-        </div>
+        </Link>
       ))}
     </div>
   );

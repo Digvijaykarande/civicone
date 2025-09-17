@@ -1,15 +1,40 @@
 .categories {
   display: flex;
-  justify-content: space-around;
-  margin: 16px 0;
+    width: 98%;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .category {
   text-align: center;
+  flex: 1;
+  text-decoration: none;
 }
 
-.category-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 6px;
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 6px;
+  border-radius: 12px;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.icon-wrapper:hover {
+  background: #bae6fd;
+  cursor: pointer;
+}
+
+.category p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
 }

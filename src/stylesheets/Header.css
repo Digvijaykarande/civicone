@@ -3,15 +3,16 @@
   align-items: center;
   gap: 12px;
   padding: 10px 0;
+  justify-content: flex-start;
 }
 
 .menu-icon {
-  font-size: 20px;
   cursor: pointer;
+  color: #2563eb;
 }
 
-.header h2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
 }

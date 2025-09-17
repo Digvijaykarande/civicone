@@ -1,0 +1,116 @@
+/* Card Container */
+.report-card {
+ display: flex;
+    max-width: 320px;
+    height: 60vh;
+    margin-top: 50px;
+    margin-left: 25px;
+    background: #ffffff;
+    padding: 50px 10px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 26%);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    transition: all 0.3s 
+ease;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+}
+
+
+.backbutton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.backbutton:hover {
+  color: #2563eb;
+}
+
+
+.report-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo */
+.logo {
+  width: 56px;
+    height: 56px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 2rem;
+}
+
+/* Title */
+.report-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+/* Main Report Button */
+.report-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.report-label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 28px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.option:hover {
+  color: #2563eb;
+}

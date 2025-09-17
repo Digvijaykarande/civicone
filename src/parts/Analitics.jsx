@@ -1,19 +1,11 @@
 import React from "react";
 import "../stylesheets/Analitics.css";
+import { Timer, AlertCircle, Bell } from "lucide-react";
 
 const analytics = [
-  {
-    label: "Resolution times",
-    icon: "https://img.icons8.com/?size=100&id=IYQsosUsIP8f&format=png&color=000000",
-  },
-  {
-    label: "Pending issues",
-    icon: "https://img.icons8.com/?size=100&id=rtP76A1lpa0V&format=png&color=000000",
-  },
-  {
-    label: "Predictive alerts",
-    icon: "https://img.icons8.com/ios/50/appointment-reminders.png", 
-  },
+  { label: "Resolution times", icon: <Timer size={28} /> },
+  { label: "Pending issues", icon: <AlertCircle size={28} /> },
+  { label: "Predictive alerts", icon: <Bell size={28} /> },
 ];
 
 const Analytics = () => {
@@ -23,7 +15,7 @@ const Analytics = () => {
       <div className="analytics-items">
         {analytics.map((item, idx) => (
           <div className="analytics-card" key={idx}>
-            <img src={item.icon} alt={item.label} className="analytics-icon" />
+            <div className="analytics-icon">{item.icon}</div>
             <p>{item.label}</p>
           </div>
         ))}
