@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/FeedPage.css";
+import "../stylesheets/feedPage.css";
 import { ArrowLeft, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 const issues = [
