@@ -43,8 +43,8 @@ const ReportingPage = () => {
       {/* Auto Location */}
       <button className="option-btn">
         <img src="https://img.icons8.com/ios/30/marker--v1.png"></img>
-        <span>Auto Location</span>
-        <span className="arrow">›</span>
+        <span style={{fontSize:"20px"}}>Auto Location</span>
+        <img src="https://img.icons8.com/ios/20/forward.png" className="arrow"></img>
       </button>
 
       {/* Category */}
@@ -52,8 +52,8 @@ const ReportingPage = () => {
         className="option-btn"
         onClick={() => setCategory("Road Issue")}
       >
-        <span>{category || "Select category"}</span>
-        <img src="https://img.icons8.com/ios/50/forward.png" className="arrow"></img>
+        <span style={{fontSize:"20px"}}>{category || "Select category"}</span>
+        <img src="https://img.icons8.com/ios/20/forward.png" className="arrow"></img>
       </button>
 
       {/* Submit Button */}

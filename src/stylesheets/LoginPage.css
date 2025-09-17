@@ -1,0 +1,135 @@
+/* Container */
+.signin-box {
+  max-width: 400px;
+    height: 62vh;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: -2px 2px 8px 2px rgb(0 0 0 / 27%);
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Logo */
+.logo-circle {
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+/* Title */
+.signin-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+/* Input Field */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* Sign In Button */
+.signin-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  background: #1e4fc6;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 13px;
+  margin: 14px 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+  margin: 0 10px;
+}
+
+/* Google Button */
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.google-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer */
+.footer-text {
+  font-size: 13px;
+  color: #444;
+}
+
+.footer-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .signin-box {
+    margin: 50px 16px;
+    padding: 30px 16px;
+  }
+
+  .signin-title {
+    font-size: 1.5rem;
+  }
+
+  .signin-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

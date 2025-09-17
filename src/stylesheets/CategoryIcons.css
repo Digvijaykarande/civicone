@@ -1,0 +1,15 @@
+.categories {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+}
+
+.category {
+  text-align: center;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+}

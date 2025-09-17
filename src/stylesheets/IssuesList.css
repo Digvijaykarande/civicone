@@ -1,0 +1,41 @@
+.issues-list {
+  margin: 20px 0;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.issue-item {
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.issue-item:last-child {
+  border-bottom: none;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.tag.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.tag.low {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #666;
+}

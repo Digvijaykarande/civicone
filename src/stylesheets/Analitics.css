@@ -1,0 +1,29 @@
+.analytics {
+  margin-top: 20px;
+}
+
+.analytics h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.analytics-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.analytics-card {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.analytics-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+}

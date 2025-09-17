@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
