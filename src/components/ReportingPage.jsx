@@ -65,7 +65,7 @@ const ReportingPage = () => {
     setCapturedImage(null);
     setShowCamera(false);
 
-    setTimeout(() => setIsSubmitting(false), 500); // simulate backend
+    setTimeout(() => setIsSubmitting(false), 500); 
   };
 
   return (
