@@ -25,8 +25,7 @@ ease;
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 70px;
   color: #374151;
   transition: color 0.2s ease;
 }
@@ -37,7 +36,7 @@ ease;
 
 
 .report-card:hover {
-  transform: translateY(-4px);
+  /* transform: translateY(-4px); */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
