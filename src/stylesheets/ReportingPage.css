@@ -181,7 +181,7 @@ textarea:focus {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .report-container {
     padding: 12px;
   }
@@ -256,7 +256,7 @@ textarea:focus {
 .retake-btn { background: #facc15; color: #111; }
 
 /* Mobile adjustments */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .camera-modal {
     max-width:92vw;
     padding: 10px;
@@ -276,5 +276,4 @@ textarea:focus {
   width: 100%;
   height: auto;
   object-fit: cover;
-  transform: rotate(0deg); 
 }
