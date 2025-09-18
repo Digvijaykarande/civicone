@@ -4,9 +4,9 @@ import { Edit2, Settings, LogOut, MapPin, FileText, Users, ArrowLeft } from "luc
 import { Link } from "react-router-dom";    
 const ProfilePage = () => {
   const user = {
-    name: "John Doe",
+    name: "Ram Patil",
     uid: "CVC12345",
-    email: "john.doe@example.com",
+    email: "ram@example.com",
     phone: "+91 9876543210",
     location: "Mumbai, India",
     reports: 12,
@@ -24,7 +24,7 @@ const ProfilePage = () => {
       <div className="profile-header-bg">
         <div className="profile-header"><span><Link to={"/"} style={{textDecoration:"none",color:"black"}}><ArrowLeft></ArrowLeft></   Link></span>
           <img
-            src="https://randomuser.me/api/portraits/men/75.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWYxOgbJwRd8qfhIhZsEsKNvp8Exn0GkTZKs2cackoziCn6zO6U07w6psm10yaHQNlkuOEQ&s"
             alt="Profile"
             className="profile-pic"
           />

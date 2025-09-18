@@ -11,7 +11,7 @@ const CameraCapture = ({ onCapture, onClose }) => {
     const startCamera = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "environment" },
+          video: { facingMode: "environment" }, // use back camera if available
         });
         streamRef.current = stream;
 
@@ -41,14 +41,11 @@ const CameraCapture = ({ onCapture, onClose }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    const isPortrait = window.innerHeight > window.innerWidth;
+    // ✅ Keep native camera resolution (no rotation/flip)
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
 
-    
-      // Normal landscape capture
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     const imageData = canvas.toDataURL("image/jpeg", 0.8);
     setPreview(imageData);

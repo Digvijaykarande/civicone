@@ -4,6 +4,9 @@
   margin: 0 auto;
   padding: 16px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #222;
 }
