@@ -191,3 +191,79 @@ textarea:focus {
     font-size: 17px;
   }
 }
+
+
+
+
+
+
+
+/* Camera modal */
+.camera-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 320px;
+  margin: 10px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.camera-video {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+}
+
+.camera-preview {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.camera-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.camera-actions .btn {
+  flex: 1 1 40%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+.capture-btn { background: #16a34a; color: #fff; }
+.cancel-btn { background: #ef4444; color: #fff; }
+.confirm-btn { background: #3b82f6; color: #fff; }
+.retake-btn { background: #facc15; color: #111; }
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .camera-modal {
+    max-width: 90%;
+    padding: 10px;
+  }
+  .camera-actions .btn {
+    flex: 1 1 45%;
+    font-size: 13px;
+    padding: 8px;
+  }
+  .camera-video, .camera-preview {
+    max-height: 280px;
+  }
+}

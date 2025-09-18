@@ -1,63 +1,96 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const CameraCapture = ({ onCapture, onClose }) => {
-  const [hasCamera, setHasCamera] = useState(false);
+  const [preview, setPreview] = useState(null);
+  const [error, setError] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const streamRef = useRef(null);
 
   useEffect(() => {
+    const startCamera = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "environment" },
+        });
+        streamRef.current = stream;
+
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          await videoRef.current.play();
+        }
+      } catch (err) {
+        console.error("Camera error:", err);
+        setError("Cannot access camera. Please allow camera permissions.");
+      }
+    };
+
     startCamera();
+
     return () => {
-      // Stop all camera tracks on unmount
-      if (videoRef.current?.srcObject) {
-        videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach((track) => track.stop());
       }
     };
   }, []);
 
-  // Request camera access
-  const startCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      videoRef.current.srcObject = stream;
-      setHasCamera(true);
-    } catch (err) {
-      alert("Camera access denied or not available.");
+  const capturePhoto = () => {
+    if (!videoRef.current || !canvasRef.current) return;
+
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    const imageData = canvas.toDataURL("image/jpeg", 0.8);
+    setPreview(imageData);
+  };
+
+  const confirmPhoto = () => {
+    if (preview) {
+      onCapture?.(preview);
+      onClose?.();
     }
   };
 
-  // Capture snapshot
-  const capturePhoto = () => {
-    const context = canvasRef.current.getContext("2d");
-    context.drawImage(videoRef.current, 0, 0, 300, 200);
-    const imageData = canvasRef.current.toDataURL("image/png");
-    if (onCapture) onCapture(imageData);
-  };
+  if (error) return <p className="text-red-600">{error}</p>;
 
   return (
-    <div className="p-4 flex flex-col items-center">
-      {hasCamera ? (
-        <div className="mt-4">
-          <video ref={videoRef} autoPlay playsInline width="300" height="200" className="rounded-lg shadow" />
-          <div className="mt-2 flex justify-center gap-2">
-            <button
-              onClick={capturePhoto}
-              className="px-3 py-1 bg-green-600 text-white rounded-lg"
-            >
+    <div className="camera-modal">
+      {!preview ? (
+        <>
+          <video
+            ref={videoRef}
+            autoPlay
+            playsInline
+            muted
+            className="camera-video"
+          />
+          <div className="camera-actions">
+            <button onClick={capturePhoto} className="btn capture-btn">
               Capture
             </button>
-            <button
-              onClick={onClose}
-              className="px-3 py-1 bg-red-600 text-white rounded-lg"
-            >
+            <button onClick={onClose} className="btn cancel-btn">
               Cancel
             </button>
           </div>
-          <canvas ref={canvasRef} width="300" height="200" style={{ display: "none" }} />
-        </div>
+        </>
       ) : (
-        <p>Loading camera...</p>
+        <>
+          <img src={preview} alt="Preview" className="camera-preview" />
+          <div className="camera-actions">
+            <button onClick={confirmPhoto} className="btn confirm-btn">
+              Use Photo
+            </button>
+            <button onClick={() => setPreview(null)} className="btn retake-btn">
+              Retake
+            </button>
+          </div>
+        </>
       )}
+
+      <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
   );
 };
