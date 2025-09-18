@@ -35,7 +35,7 @@
 
 /* Upload box */
 .upload-box {
-  width:92vw;
+  width:98%;
   height: 235px;
   background: #f9fafb;
   border: 2px dashed #d1d5db;
@@ -269,4 +269,12 @@ textarea:focus {
   .camera-video, .camera-preview {
     max-height: 280px;
   }
+}
+
+
+.camera-video, .camera-preview {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: rotate(0deg); 
 }

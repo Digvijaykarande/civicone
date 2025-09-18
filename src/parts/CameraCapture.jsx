@@ -39,10 +39,26 @@ const CameraCapture = ({ onCapture, onClose }) => {
 
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
     const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const isPortrait = window.innerHeight > window.innerWidth;
+
+    if (isPortrait) {
+      // Rotate canvas for portrait
+      canvas.width = video.videoHeight;
+      canvas.height = video.videoWidth;
+      ctx.save();
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate((90 * Math.PI) / 180); // rotate 90 deg
+      ctx.drawImage(video, -video.videoWidth / 2, -video.videoHeight / 2);
+      ctx.restore();
+    } else {
+      // Normal landscape capture
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    }
+
     const imageData = canvas.toDataURL("image/jpeg", 0.8);
     setPreview(imageData);
   };
