@@ -30,8 +30,10 @@ const Home = () => {
       {/* Options */}
       <div className="options">
         <div className="option">
+        <Link to={"/report"} className="option-link">
           <Camera size={45} />
           <span>Photo</span>
+          </Link>
         </div>
         <div className="option">
           <Mic size={45} />

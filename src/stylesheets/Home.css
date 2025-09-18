@@ -55,7 +55,14 @@ ease;
     margin: 0 auto 12px;
     font-size: 2rem;
 }
-
+.option-link{
+      display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 /* Title */
 .report-title {
   font-size: 1.4rem;

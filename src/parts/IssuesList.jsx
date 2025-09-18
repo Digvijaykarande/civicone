@@ -3,9 +3,9 @@ import "../stylesheets/IssuesList.css";
 import { ChevronRight } from "lucide-react";
 
 const issues = [
-  { label: "Pothole", type: "high" },
+  { label: "Roads", type: "high" },
   { label: "Broken streetlight", type: "high" },
-  { label: "Litter", type: "low" },
+  { label: "Waste", type: "low" },
 ];
 
 const IssuesList = () => {

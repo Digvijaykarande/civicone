@@ -9,6 +9,8 @@ import RegistrationPage from './components/RegistrationPage'
 import Home from './components/Home'
 import NoticationPage from './components/NoticationPage'
 import FeedPage from './components/FeedPage'
+import ProfilePage from './components/ProfilePage'
+
 function App() {
 
   return (
@@ -23,7 +25,8 @@ function App() {
         <Route path="/register" element={<RegistrationPage />} /> 
         <Route path="/home" element={<Home />} />
         <Route path="/feed" element={<FeedPage />} />
-        <Route path="/notifications" element={<NoticationPage />} />
+        <Route path="/notifications" element={<NoticationPage />} /> 
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
 
     </Router>

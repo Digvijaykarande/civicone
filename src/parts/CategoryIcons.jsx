@@ -8,10 +8,10 @@ const categories = [
   { label: "Report Issue", icon: <Trash2 size={28} />, path: "/home" },
   { label: "Notifications", icon: <Bell size={28} />, path: "/notifications" },
   { label: "Peoples Issue", icon: <House size={28} />, path: "/feed" },
-  { label: "Roads", icon: <Route size={28} />, path: "/roads" },
-  { label: "Waste", icon: <Trash2 size={28} />, path: "/waste" },
-  { label: "Water", icon: <Droplet size={28} />, path: "/water" },
-  { label: "Streetlights", icon: <Lightbulb size={28} />, path: "/streetlights" },
+  { label: "Roads", icon: <Route size={28} />, path: "#" },
+  { label: "Waste", icon: <Trash2 size={28} />, path: "#" },
+  { label: "Water", icon: <Droplet size={28} />, path: "#" },
+  { label: "Streetlights", icon: <Lightbulb size={28} />, path: "#" },
 ];
 
 const CategoryIcons = () => {
