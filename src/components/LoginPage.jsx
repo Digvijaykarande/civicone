@@ -1,34 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "../stylesheets/LoginPage.css";
 
 const LoginPage = () => {
-  return (
-    <div className="signin-box">
-      {/* Logo */}
-      <div className="logo-circle">C</div>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-      {/* Title */}
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Save JWT token in localStorage
+        localStorage.setItem("token", data.token);
+        alert("Login successful!");
+        // Redirect or navigate to dashboard
+        window.location.href = "/"; 
+      } else {
+        alert(data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Login failed!");
+    }
+  };
+
+  return (
+    <>
+    <div className="signin-box">
+      <div className="logo-circle">C</div>
       <h2 className="signin-title">SignIn</h2>
 
       <input
         type="email"
         placeholder="user@example.com"
         className="input-field"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
 
-      <input type="password" 
-      placeholder="Password"
-      className="input-field" />
+      <input
+        type="password"
+        placeholder="Password"
+        className="input-field"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
 
-      {/* Sign In Button */}
-      <button className="signin-btn">Sign in</button>
+      <button className="signin-btn" onClick={handleLogin}>
+        Sign in
+      </button>
 
-      {/* Divider */}
-      <div className="divider">
-        <span>or</span>
-      </div>
+      <div className="divider"><span>or</span></div>
 
-      {/* Google Sign In */}
       <button className="google-btn">
         <img
           src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
@@ -37,11 +68,11 @@ const LoginPage = () => {
         <span>Sign in with Google</span>
       </button>
 
-      {/* Footer */}
       <p className="footer-text">
         Don’t have an account? <a href="register">register</a>
       </p>
     </div>
+    </>
   );
 };
 
