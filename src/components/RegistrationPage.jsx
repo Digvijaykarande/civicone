@@ -12,7 +12,7 @@ const RegistrationPage = () => {
     const data = { name, email, phone, password };
 
     try {
-      const res = await fetch("http://localhost:3000/api/auth/register", {
+      const res = await fetch("https://civicone-backend.onrender.com/api/users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)

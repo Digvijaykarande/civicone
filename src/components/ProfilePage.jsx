@@ -18,7 +18,7 @@ const ProfilePage = () => {
       }
 
       try {
-        const res = await fetch("http://localhost:3000/api/users/profile", {
+        const res = await fetch("https://civicone-backend.onrender.com/api/users/profile", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
