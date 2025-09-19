@@ -56,7 +56,7 @@ const ProfilePage = () => {
             </Link>
           </span>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWYxOgbJwRd8qfhIhZsEsKNvp8Exn0GkTZKs2cackoziCn6zO6U07w6psm10yaHQNlkuOEQ&s"
+            src="https://img.icons8.com/?size=100&id=kDoeg22e5jUY&format=png&color=000000"
             alt="Profile"
             className="profile-pic"
           />
